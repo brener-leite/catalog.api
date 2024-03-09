@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Catalog.API.Models;
 
@@ -26,5 +27,7 @@ public class Product
     public int Stock { get; set; }
     public DateTime CreatedAt { get; set; }
     public int CategoryId { get; set; }
+
+    [JsonIgnore]
     public Category? Category { get; set; }
 }
